@@ -1,0 +1,2 @@
+Another terrible program written my senior year. I learned how to write classes this time, but apparently not how to make comments. I probably should not have made cell have an arraylist that just store every cell created ever, and instead created the list in the runner and fed it the the runAllOnce() method instead of having that be static too. All around some bad decision were made. Not going to fix it though. 
+ -- Written Oct 7, 2026

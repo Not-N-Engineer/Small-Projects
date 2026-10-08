@@ -1,0 +1,2 @@
+Decided to try to update a horrific card game runner I made in python like a couple week *before* the Small Text Adventure into c++ and make it use classes and multiple files and not be terrible. Not even going to include it in this repo.
+ -- Written Oct 7, 2026

@@ -1,0 +1,2 @@
+Made this for a school project. The instructions were to create a few classes for managing a business, so I included some things that wouldn't have really made too much sense to include otherwise so that it would technically count. I'm proud of this one, but probably because of recency bias and because I stayed up until 4am two days ago writing it. Probably going to expand on it at some point. Maybe release it as something, I don't know. 
+ -- Written Oct 7, 2026
