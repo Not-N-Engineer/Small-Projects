@@ -1,7 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <unordered_map>
 #include <vector>
+#include <algorithm>
+#include <random>
 
 //The struct for a card data type
 struct Card {
@@ -10,20 +13,19 @@ struct Card {
     std::string suit;
 };
 
-
 class DeckHelper {
     private:
         // ANSI escape codes for colors
         const static std::string RESET;
         const static std::string BOLD;
         const static std::string WHITE;
-        static unordered_map<std::string, std::string> SUIT_BACKGROUNDS;
-        static boolean FANCY_MODE;
+        static std::unordered_map<std::string, std::string> SUIT_BACKGROUNDS;
+        static bool FANCY_MODE;
     
         // Helpers to define what each card is or can be
         static std::vector<std::string> RANKS;
         static std::vector<std::string> SUITS;
-        static unordered_map<std::string, int> RANK_VALUES; 
+        static std::unordered_map<std::string, int> RANK_VALUES; 
     public:
         /*
          * Method to create a new deck. 
@@ -36,7 +38,7 @@ class DeckHelper {
          * Takes an std::vector<Card> (the deck). 
          * Outputs the shuffled deck. 
          */
-        static std::vector<card> shuffleDeck(std::vector<card> cards);
+        static std::vector<Card> shuffleDeck(std::vector<Card> cards);
         
     
         /*
@@ -59,4 +61,4 @@ class DeckHelper {
          * Outputs an std::string corresponding to the name of the rank entered. 
          */
         static std::string formatCards(std::vector<Card> cards);
-}
+};
