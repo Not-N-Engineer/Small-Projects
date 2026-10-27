@@ -25,7 +25,8 @@ class DeckHelper {
         // Helpers to define what each card is or can be
         static std::vector<std::string> RANKS;
         static std::vector<std::string> SUITS;
-        static std::unordered_map<std::string, int> RANK_VALUES; 
+        static std::unordered_map<std::string, int> RANK_VALUES;
+        
     public:
         /*
          * Method to create a new deck. 
@@ -61,4 +62,5 @@ class DeckHelper {
          * Outputs an std::string corresponding to the name of the rank entered. 
          */
         static std::string formatCards(std::vector<Card> cards);
+
 };
