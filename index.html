@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Projects - Yujie Jin</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=EB+Garamond&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    </head>
+
+    <body>
+        <div class="binder">
+            <h2>
+                These are some of the things I've worked on in my free time. 
+            </h2>
+            
+            <div class="tile">
+                <a href="poems/Apr-6-2026.html" target="_blank">
+                <h2>I can cast a spell</h2>
+                <p>April 6, 2026</p>
+                </a>
+            </div>
+
+            <p class="end"> </p>
+        </div>
+    </body>
+
+    <script>
+        const cards = document.querySelectorAll(".tile");
+
+        cards.forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+
+                const centerX = rect.left + rect.width/2;
+                const centerY = rect.top + rect.height/2;
+
+                const tiltX = -(e.clientY - centerY)/(rect.height/2) * 15;
+                const tiltY = ((e.clientX - centerX)/(rect.width/2) * 15);
+
+                card.style.transform = `perspective(2000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.1, 1.1, 1.1)`;
+                card.style.boxShadow = `${-tiltY}px ${tiltX}px 8px #0000007c`;
+            })
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = `perspective(2000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                card.style.boxShadow = `0 2px 8px #0000007c`;
+            })
+        });
+
+        document.querySelectorAll(".tile h2").forEach((title) => {
+            const card = title.closest(".tile");
+            const availableWidth = card.clientWidth - 10;
+
+            fontSize = 65;
+            title.style.fontSize = `${fontSize}px`;
+
+            while(title.scrollWidth > availableWidth && fontSize > 45) {
+                fontSize--;
+                title.style.fontSize = `${fontSize}px`;
+            }
+
+            if(title.scrollWidth > availableWidth) {
+                title.style.whiteSpace = `normal`;
+            }
+        });
+    </script>
+</html>
